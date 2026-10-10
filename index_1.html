@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ShopEase | Everyday finds, made easy</title>
+  <meta name="description" content="ShopEase is a clean, fast online store for electronics, fashion, home, beauty and sports essentials.">
+  <meta name="theme-color" content="#6D28D9">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body id="top">
+
+  <!-- SVG icon sprite: every icon on the site is defined once here and reused with <use> -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <!-- UI icons -->
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></symbol>
+    <symbol id="i-cart" viewBox="0 0 24 24"><circle cx="9" cy="20" r="1.5"/><circle cx="18" cy="20" r="1.5"/><path d="M2 3h3l2.5 12h11l2-8H6"/></symbol>
+    <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></symbol>
+    <symbol id="i-truck" viewBox="0 0 24 24"><path d="M2 6h11v10H2zM13 10h4l4 3v3h-8"/><circle cx="7" cy="18" r="2"/><circle cx="17" cy="18" r="2"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M9 12l2 2 4-4"/></symbol>
+    <symbol id="i-refresh" viewBox="0 0 24 24"><path d="M20 11a8 8 0 0 0-14-4L4 9M4 13a8 8 0 0 0 14 4l2-2"/><path d="M4 4v5h5M20 20v-5h-5"/></symbol>
+    <symbol id="i-headset" viewBox="0 0 24 24"><path d="M4 14v-2a8 8 0 0 1 16 0v2"/><rect x="3" y="14" width="4" height="6" rx="1.5"/><rect x="17" y="14" width="4" height="6" rx="1.5"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+    <symbol id="i-minus" viewBox="0 0 24 24"><path d="M5 12h14"/></symbol>
+    <symbol id="i-trash" viewBox="0 0 24 24"><path d="M4 7h16M10 11v6M14 11v6M6 7l1 13h10l1-13M9 7V4h6v3"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+    <symbol id="i-tag" viewBox="0 0 24 24"><path d="M3 12V4h8l10 10-8 8z"/><circle cx="8" cy="9" r="1.5"/></symbol>
+    <symbol id="i-gift" viewBox="0 0 24 24"><rect x="3" y="9" width="18" height="12" rx="2"/><path d="M12 9v12M3 13h18M12 9c-3 0-5-1-5-3s3-3 5 0c2-3 5-3 5 0s-2 3-5 3z"/></symbol>
+    <symbol id="i-copy" viewBox="0 0 24 24"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h8"/></symbol>
+    <symbol id="i-bag" viewBox="0 0 24 24"><path d="M5 8h14l-1 12H6z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></symbol>
+    <!-- Product and category illustrations -->
+    <symbol id="p-headphones" viewBox="0 0 48 48"><path d="M8 28v-4a16 16 0 0 1 32 0v4"/><rect x="6" y="28" width="8" height="12" rx="3"/><rect x="34" y="28" width="8" height="12" rx="3"/></symbol>
+    <symbol id="p-watch" viewBox="0 0 48 48"><rect x="14" y="12" width="20" height="24" rx="6"/><path d="M18 12l1-6h10l1 6M18 36l1 6h10l1-6"/><path d="M24 20v5l3 2"/></symbol>
+    <symbol id="p-sneaker" viewBox="0 0 48 48"><path d="M6 31c0-4 3-7 6-7h5l4 4c3 0 6 1 9 2l9 2c2 .5 3 2 3 4v2H6z"/><path d="M6 37h36M21 28l3-3M26 30l3-3"/></symbol>
+    <symbol id="p-backpack" viewBox="0 0 48 48"><path d="M17 12a7 7 0 0 1 14 0"/><rect x="10" y="14" width="28" height="28" rx="8"/><rect x="16" y="28" width="16" height="10" rx="3"/></symbol>
+    <symbol id="p-lamp" viewBox="0 0 48 48"><path d="M16 8h16l6 18H10z"/><path d="M24 26v12M16 40h16"/></symbol>
+    <symbol id="p-camera" viewBox="0 0 48 48"><rect x="6" y="14" width="36" height="26" rx="5"/><circle cx="24" cy="27" r="8"/><path d="M17 14l2-5h10l2 5"/></symbol>
+    <symbol id="p-speaker" viewBox="0 0 48 48"><rect x="12" y="6" width="24" height="36" rx="6"/><circle cx="24" cy="29" r="7"/><circle cx="24" cy="15" r="2"/></symbol>
+    <symbol id="p-glasses" viewBox="0 0 48 48"><circle cx="14" cy="28" r="8"/><circle cx="34" cy="28" r="8"/><path d="M22 27c1-1.5 3-1.5 4 0M6 26l-2-6M42 26l2-6"/></symbol>
+    <symbol id="p-tshirt" viewBox="0 0 48 48"><path d="M16 8L6 14l4 8 6-3v21h16V19l6 3 4-8-10-6c-1 4-4 6-8 6s-7-2-8-6z"/></symbol>
+    <symbol id="p-bottle" viewBox="0 0 48 48"><path d="M20 6h8v6l4 6v22a3 3 0 0 1-3 3H19a3 3 0 0 1-3-3V18l4-6z"/><path d="M16 26h16"/></symbol>
+    <symbol id="p-jar" viewBox="0 0 48 48"><rect x="10" y="20" width="28" height="20" rx="5"/><rect x="12" y="12" width="24" height="8" rx="3"/><path d="M18 30h12"/></symbol>
+    <symbol id="p-dumbbell" viewBox="0 0 48 48"><path d="M8 20v8M14 16v16M34 16v16M40 20v8M14 24h20"/></symbol>
+  </svg>
+
+  <a class="skip-link" href="#products">Skip to products</a>
+
+  <div class="announce">Free shipping on orders over <strong>₹999</strong> · Use code <strong>SHOPEASE10</strong> for 10% off your first order</div>
+
+  <!-- ============ HEADER ============ -->
+  <header class="header">
+    <div class="container nav">
+      <button class="icon-btn menu-btn" id="menuBtn" type="button" aria-label="Open categories menu" aria-expanded="false" aria-controls="primaryNav">
+        <svg class="icon" width="24" height="24"><use href="#i-menu"/></svg>
+      </button>
+
+      <a class="logo" href="#top" aria-label="ShopEase home">
+        <span class="logo-mark"><svg class="icon" width="22" height="22"><use href="#i-bag"/></svg></span>
+        <span class="logo-text">Shop<span>Ease</span></span>
+      </a>
+
+      <form class="search" id="searchForm" role="search">
+        <label class="sr-only" for="searchInput">Search products</label>
+        <svg class="icon search-icon" width="20" height="20" aria-hidden="true"><use href="#i-search"/></svg>
+        <input id="searchInput" type="search" placeholder="Search headphones, sneakers, lamps..." autocomplete="off">
+        <button class="btn btn-primary btn-sm" type="submit">Search</button>
+      </form>
+
+      <div class="nav-actions">
+        <a class="icon-btn" href="#" aria-label="Your account">
+          <svg class="icon" width="24" height="24"><use href="#i-user"/></svg>
+        </a>
+        <button class="icon-btn" id="cartBtn" type="button" aria-label="Open cart, 0 items" aria-controls="cartDrawer">
+          <svg class="icon" width="24" height="24"><use href="#i-cart"/></svg>
+          <span class="cart-count" id="cartCount" hidden>0</span>
+        </button>
+      </div>
+
+      <nav class="primary-nav" id="primaryNav" aria-label="Shop by category">
+        <ul>
+          <li><a href="#products" data-cat="all">All products</a></li>
+          <li><a href="#products" data-cat="electronics">Electronics</a></li>
+          <li><a href="#products" data-cat="fashion">Fashion</a></li>
+          <li><a href="#products" data-cat="home">Home &amp; Living</a></li>
+          <li><a href="#products" data-cat="beauty">Beauty</a></li>
+          <li><a href="#products" data-cat="sports">Sports</a></li>
+          <li><a href="#products" data-cat="accessories">Accessories</a></li>
+          <li class="nav-offers"><a href="#offers">Offers</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- ============ HERO ============ -->
+    <section class="hero" aria-labelledby="heroTitle">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow"><svg class="icon" width="16" height="16"><use href="#i-tag"/></svg> New season, new savings</p>
+          <h1 id="heroTitle">Everyday finds, <span>made easy.</span></h1>
+          <p class="lead">Discover thoughtfully chosen electronics, fashion and home essentials at honest prices, with fast delivery and returns that just work.</p>
+          <div class="hero-cta">
+            <a class="btn btn-primary btn-lg" href="#products">Shop Now <svg class="icon" width="18" height="18"><use href="#i-arrow"/></svg></a>
+            <a class="btn btn-ghost btn-lg" href="#categories">Browse categories</a>
+          </div>
+          <ul class="trust">
+            <li><svg class="icon" width="20" height="20"><use href="#i-truck"/></svg> Free delivery over ₹999</li>
+            <li><svg class="icon" width="20" height="20"><use href="#i-refresh"/></svg> 30-day easy returns</li>
+            <li><svg class="icon" width="20" height="20"><use href="#i-shield"/></svg> Secure payments</li>
+          </ul>
+        </div>
+
+        <div class="hero-art" aria-hidden="true">
+          <div class="hero-big"><svg class="icon" width="200" height="200"><use href="#i-bag"/></svg></div>
+          <div class="float-card fc1"><span class="mini"><svg class="icon" width="26" height="26"><use href="#p-headphones"/></svg></span><div><strong>Aura Headphones</strong><small>₹4,999</small></div></div>
+          <div class="float-card fc2"><span class="mini"><svg class="icon" width="26" height="26"><use href="#p-watch"/></svg></span><div><strong>Pulse Smartwatch</strong><small>₹3,499</small></div></div>
+          <div class="float-card fc3"><span class="mini"><svg class="icon" width="26" height="26"><use href="#p-sneaker"/></svg></span><div><strong>Stride Sneakers</strong><small>₹2,799</small></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CATEGORIES ============ -->
+    <section class="section" id="categories" aria-labelledby="catTitle">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="kicker">Browse</p>
+            <h2 id="catTitle">Shop by category</h2>
+          </div>
+        </div>
+        <div class="cat-grid" id="categoryGrid"><!-- filled by script.js --></div>
+      </div>
+    </section>
+
+    <!-- ============ PRODUCTS ============ -->
+    <section class="section section-tint" id="products" aria-labelledby="prodTitle">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="kicker">Our picks</p>
+            <h2 id="prodTitle">Popular right now</h2>
+          </div>
+          <div class="sort">
+            <label for="sortSelect">Sort by</label>
+            <select id="sortSelect">
+              <option value="featured">Featured</option>
+              <option value="price-asc">Price: low to high</option>
+              <option value="price-desc">Price: high to low</option>
+              <option value="rating">Top rated</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="chips" id="filterChips" role="group" aria-label="Filter by category"><!-- filled by script.js --></div>
+        <p class="result-count" id="resultCount" role="status" aria-live="polite"></p>
+
+        <div class="product-grid" id="productGrid"><!-- filled by script.js --></div>
+
+        <div class="empty" id="emptyState" hidden>
+          <h3>No products found</h3>
+          <p>Try a different word or clear the filters.</p>
+          <button class="btn btn-ghost" id="resetFilters" type="button">Clear filters</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SPECIAL OFFERS ============ -->
+    <section class="section" id="offers" aria-labelledby="offerTitle">
+      <div class="container">
+        <div class="offer-banner">
+          <div>
+            <p class="kicker kicker-light">Limited time</p>
+            <h2 id="offerTitle">Weekend mega sale: up to 30% off</h2>
+            <p class="offer-text">Save on audio, footwear and home picks. Offer ends in:</p>
+            <div class="timer" id="timer" role="timer" aria-label="Time left in the sale">
+              <div class="time-box"><b id="tDays">00</b><small>Days</small></div>
+              <div class="time-box"><b id="tHours">00</b><small>Hours</small></div>
+              <div class="time-box"><b id="tMins">00</b><small>Mins</small></div>
+              <div class="time-box"><b id="tSecs">00</b><small>Secs</small></div>
+            </div>
+          </div>
+          <div class="coupon-wrap">
+            <p>Extra 10% off your first order</p>
+            <div class="coupon">
+              <code id="couponCode">SHOPEASE10</code>
+              <button type="button" id="copyCoupon"><svg class="icon" width="18" height="18"><use href="#i-copy"/></svg> Copy</button>
+            </div>
+            <a class="btn btn-light btn-lg" href="#products">Start shopping</a>
+          </div>
+        </div>
+
+        <div class="offer-cards">
+          <article class="offer-card">
+            <span class="offer-icon"><svg class="icon" width="26" height="26"><use href="#i-tag"/></svg></span>
+            <h3>Flat 30% off audio</h3>
+            <p>Headphones and speakers from top-rated sellers.</p>
+            <a class="link" href="#products" data-cat="electronics">Shop electronics <svg class="icon" width="16" height="16"><use href="#i-arrow"/></svg></a>
+          </article>
+          <article class="offer-card">
+            <span class="offer-icon"><svg class="icon" width="26" height="26"><use href="#i-gift"/></svg></span>
+            <h3>Free gift wrapping</h3>
+            <p>Add a gift note and wrapping at checkout, on us.</p>
+            <a class="link" href="#products">Find a gift <svg class="icon" width="16" height="16"><use href="#i-arrow"/></svg></a>
+          </article>
+          <article class="offer-card">
+            <span class="offer-icon"><svg class="icon" width="26" height="26"><use href="#i-truck"/></svg></span>
+            <h3>Free shipping over ₹999</h3>
+            <p>Fast delivery to your door with live order tracking.</p>
+            <a class="link" href="#products">Start shopping <svg class="icon" width="16" height="16"><use href="#i-arrow"/></svg></a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ TRUST STRIP ============ -->
+    <section class="perks" aria-label="Why shop with ShopEase">
+      <div class="container perks-grid">
+        <div><svg class="icon" width="28" height="28"><use href="#i-truck"/></svg><div><strong>Fast delivery</strong><span>Most orders arrive in 2 to 4 days</span></div></div>
+        <div><svg class="icon" width="28" height="28"><use href="#i-refresh"/></svg><div><strong>Easy returns</strong><span>30 days, no questions asked</span></div></div>
+        <div><svg class="icon" width="28" height="28"><use href="#i-shield"/></svg><div><strong>Secure checkout</strong><span>Your payment details stay private</span></div></div>
+        <div><svg class="icon" width="28" height="28"><use href="#i-headset"/></svg><div><strong>Friendly support</strong><span>Real people, 7 days a week</span></div></div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a class="logo logo-light" href="#top" aria-label="ShopEase home">
+          <span class="logo-mark"><svg class="icon" width="22" height="22"><use href="#i-bag"/></svg></span>
+          <span class="logo-text">Shop<span>Ease</span></span>
+        </a>
+        <p>Everyday finds, made easy. A student UI/UX redesign project.</p>
+        <form class="newsletter" id="newsletterForm">
+          <label class="sr-only" for="newsletterEmail">Email address</label>
+          <input id="newsletterEmail" type="email" placeholder="Your email address" required>
+          <button class="btn btn-primary btn-sm" type="submit">Subscribe</button>
+        </form>
+      </div>
+      <nav aria-label="Shop links">
+        <h3>Shop</h3>
+        <ul>
+          <li><a href="#products" data-cat="electronics">Electronics</a></li>
+          <li><a href="#products" data-cat="fashion">Fashion</a></li>
+          <li><a href="#products" data-cat="home">Home &amp; Living</a></li>
+          <li><a href="#products" data-cat="beauty">Beauty</a></li>
+          <li><a href="#offers">Offers</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Customer support links">
+        <h3>Support</h3>
+        <ul>
+          <li><a href="#">Help centre</a></li>
+          <li><a href="#">Track your order</a></li>
+          <li><a href="#">Shipping information</a></li>
+          <li><a href="#">Returns and refunds</a></li>
+          <li><a href="#">Contact us</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Company links">
+        <h3>Company</h3>
+        <ul>
+          <li><a href="#">About ShopEase</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Privacy policy</a></li>
+          <li><a href="#">Terms of service</a></li>
+          <li><a href="#">Accessibility</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="container footer-bottom">
+      <p>&copy; <span id="year">2026</span> ShopEase. Demo project for educational use. Products and prices are placeholders.</p>
+    </div>
+  </footer>
+
+  <!-- ============ CART DRAWER ============ -->
+  <div class="overlay" id="overlay"></div>
+  <aside class="drawer" id="cartDrawer" role="dialog" aria-modal="true" aria-labelledby="cartTitle" aria-hidden="true">
+    <div class="drawer-head">
+      <h2 id="cartTitle">Your cart</h2>
+      <button class="icon-btn" id="closeCart" type="button" aria-label="Close cart"><svg class="icon" width="24" height="24"><use href="#i-close"/></svg></button>
+    </div>
+    <div class="ship-progress" id="shipProgress">
+      <p id="shipText"></p>
+      <div class="bar"><span id="shipBar"></span></div>
+    </div>
+    <ul class="cart-list" id="cartList"></ul>
+    <div class="cart-empty" id="cartEmpty">
+      <svg class="icon" width="56" height="56"><use href="#i-cart"/></svg>
+      <h3>Your cart is empty</h3>
+      <p>Add something you love and it will show up here.</p>
+      <button class="btn btn-primary" id="continueShopping" type="button">Continue shopping</button>
+    </div>
+    <div class="drawer-foot" id="cartFoot">
+      <div class="subtotal"><span>Subtotal</span><strong id="cartSubtotal">₹0</strong></div>
+      <p class="note">Shipping and taxes are calculated at checkout.</p>
+      <button class="btn btn-primary btn-lg btn-block" id="checkoutBtn" type="button">Checkout</button>
+    </div>
+  </aside>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
